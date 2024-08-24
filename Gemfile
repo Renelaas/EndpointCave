@@ -14,6 +14,7 @@ group :jekyll_plugins do
   gem "jekyll-gist"
   gem "jekyll-feed"
   gem "jemoji"
+  gem 'breakpoint'
   gem "jekyll-include-cache"
   gem "jekyll-algolia"
   gem "kramdown-parser-gfm" # Add this line
