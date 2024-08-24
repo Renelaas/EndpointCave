@@ -1,0 +1,44 @@
+<div id="footer-layout">
+  <div class="container">
+    <div class="one_third">
+        <h3 class="title">About Me</h3>
+          <p>
+            {{ author.name | markdownify }}
+          </p>
+          <p>
+            {% if author.bio %}
+              {{ author.bio | markdownify }}
+          {% endif %}
+            <a href="/about/" class="underline">
+              Read more about me
+            </a>
+          </p>
+    </div>
+    <div class="one_third" id="newsbox-3">
+        <h3 class="title">Latest blog posts</h3>
+        <ul class="news-wrap">
+          {%- assign latest_posts = site.posts | slice: 0, 3 -%}
+          {%- for post in latest_posts -%}
+          <li class="news-content">
+            <div class="news-link">
+              <a href="{{ post.url | relative_url }}">
+                <img width="36" height="36" src="{{ post.image }}" sizes="(max-width: 36px) 100vw, 36px">
+              </a>
+              <div class="news-headline">
+                <a href="{{ post.url | relative_url }}">
+                  {{ post.title }}
+                </a>
+                <span class="news-time">{{ post.date | date: "%d/%m/%Y - %H:%M" }}</span>
+              </div>
+            </div>
+          </li>
+          {%- endfor -%}
+        </ul>
+    </div>
+    <div class="one_third last">
+      <section id="Newsletter">
+        <h3 class="title">Subscribe to my monthly security newsletter</h3>
+        <iframe src="https://endpointcave.substack.com/embed" id="newsletter" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+</div>
