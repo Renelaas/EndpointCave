@@ -1,7 +1,7 @@
 source "https://rubygems.org"
-gem "jekyll", "~> 3.9"
+
 gem "github-pages", group: :jekyll_plugins
-gem "minimal-mistakes-jekyll"
+gem "minimal-mistakes-jekyll", path: ".."
 gem "rake"
 
 gem "tzinfo-data"
@@ -14,8 +14,6 @@ group :jekyll_plugins do
   gem "jekyll-gist"
   gem "jekyll-feed"
   gem "jemoji"
-  gem 'breakpoint'
   gem "jekyll-include-cache"
   gem "jekyll-algolia"
-  gem "kramdown-parser-gfm" # Add this line
 end
