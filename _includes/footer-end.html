@@ -1,0 +1,26 @@
+<footer class="page__footer-copyright" id="copy" role="contentinfo" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
+    <div class="container">
+      <span class="copyright">
+        &copy; {{ site.time | date: '%Y' }} Copyright -
+        <a href="{{ site.copyright_url | default: site.url }}">
+          {{ site.copyright | default: site.title }}
+        </a>
+      </span>
+      {% include_cached social-link.html %}
+      <nav class="sub_menu_socket" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+        <div class="avia3-menu">
+          <ul role="menu" class="menu" id="avia3-menu">
+            {%- for link in site.data.navigation.main -%}
+            <li class="masthead__menu-item">
+              <a
+                href="{{ link.url | relative_url }}"
+                {% if link.description %} title="{{ link.description }}"{% endif %}
+                {% if link.target %} target="{{ link.target }}"{% endif %}
+              >{{ link.title }}</a>
+            </li>
+          {%- endfor -%}
+          </ul>
+        </div>
+      </nav>
+    </div>
+</footer>
