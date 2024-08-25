@@ -339,6 +339,7 @@ PLATFORMS
 DEPENDENCIES
   breakpoint
   github-pages
+  jekyll (~> 3.9)
   jekyll-algolia
   jekyll-feed
   jekyll-gist
