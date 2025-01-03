@@ -1,0 +1,795 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="nl-NL" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Configure Defender SmartScreen via Settings catalog with Intune  |  Endpointcave</title>
+<meta name="description" content="The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen in Windows and Microsoft Edge via the Settings catalog option with Microsoft Intune.">
+
+
+  <meta name="author" content="René Laas">
+  
+  <meta property="article:author" content="René Laas">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Endpointcave">
+<meta property="og:title" content="Configure Defender SmartScreen via Settings catalog with Intune">
+<meta property="og:url" content="http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/">
+
+
+  <meta property="og:description" content="The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen in Windows and Microsoft Edge via the Settings catalog option with Microsoft Intune.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-09-21T20:40:03+02:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Endpointcave Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  window.enable_copy_code_button = true;
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="stylesheet" href="/assets/css/custom.css">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div id="header_meta" class="">
+    <div class="container">
+      <ul class="social_bookmarks">
+    <li>
+      <a target="_blank" href="https://www.linkedin.com/in/renelaas/">
+        <i class="fab fa-brands fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="https://x.com/mr_helaas">
+        <i class="fab fa-brands fa-square-x-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="https://github.com/Renelaas">
+        <i class="fab fa-fw fa-github"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="/contact">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/feed.xml">
+        <i class="fas fa-fw fa-rss-square"></i>
+      </a>
+    </li>
+    
+  </ul>
+    </div>
+  </div>
+
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/branding/logo_transparent_background.png" alt="Endpointcave"></a>
+        
+        <a class="site-title" href="/">
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://endpointcave.substack.com/"
+                
+                
+              >Montly security newsletter</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/contact/"
+                
+                
+              >Contact</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Wissel Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+      You are here:
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/microsoft-defender-for-xdr" itemprop="item"><span itemprop="name">Microsoft defender for xdr</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/smartscreen" itemprop="item"><span itemprop="name">Smartscreen</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Configure Defender SmartScreen via Settings catalog with Intune</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/branding/Rene.jpg" alt="René Laas" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/about" itemprop="url">René Laas</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Tribe Leader Security @ RawWorks. A Microsoft MVP with a deep passion for security and Microsoft.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Volg</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Netherlands</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://linkedin.com/in/renelaas" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-brands fa-linkedin" aria-hidden="true"></i><span class="label"> LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://ddscc.nl" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-brands fa-meetup" aria-hidden="true"></i><span class="label">Dutch Data Security Community</span></a></li>
+          
+        
+          
+            <li><a href="https://x.com/mr_helaas" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span class="label">X (Twitter)</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Renelaas" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Configure Defender SmartScreen via Settings catalog with Intune">
+    <meta itemprop="description" content="The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen in Windows and Microsoft Edge via the Settings catalog option with Microsoft Intune.">
+    <meta itemprop="datePublished" content="2023-09-21T20:40:03+02:00">
+    
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/" itemprop="url">Configure Defender SmartScreen via Settings catalog with Intune
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta">
+        <span class="page__meta-date">
+          <i class="far fa-calendar-alt" aria-hidden="true"></i>
+          
+          Published on: September 21, 2023
+        </span>
+        <span class="page__meta-author">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          Author: René Laas
+        </span>
+        <span class="page__meta-readtime"></span>
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          11 minuut gelezen
+        
+      </span>
+    
+      
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen in Windows and Microsoft Edge via the Settings catalog option with Microsoft Intune.</p>
+
+<p>In this blog post, I use the Settings catalog option, it is possible to configure SmartScreen via several methods. For example Endpoint Protection, Administrative Templates, or Microsoft Security baselines. The security baseline is in my point of view not an option because it does not have all the configuration settings available. I wanted to have all the configuration of a feature in one profile instead of multiple configuration profiles and a change to get conflicts.</p>
+
+<p>For the other methods (Endpoint Protection and Administrative Templates), it is more a personal preference. I do like to use the Settings catalog because of the duplicate function and some functionalities in the Graph API. Do you prefer the Endpoint protection or Administrative template profiles? Please check out the following blog: How to configure Microsoft Defender SmartScreen via Microsoft Intune?</p>
+
+<p>Requirements:</p>
+
+<p>Windows 10 Pro/Enterprise
+Microsoft Intune license
+What is Microsoft Defender SmartScreen, why should I configure it?
+Microsoft Defender is a Windows built-in security solution that helps your user to be protected against phishing or malware websites and malicious applications and protects your user to download (potentially) malicious files.</p>
+
+<p>Microsoft Defender SmartScreen provides a warning page against e.g., websites that might engage in phishing attacks or attempt to distribute malware through a socially engineered attack.</p>
+
+<p>When Microsoft Defender SmartScreen is configured, you will have the following benefits:</p>
+
+<p>Anti-phishing and anti-malware support
+Reputation-based URL and app protection
+Fully integrated into Windows 10 and 11
+Management via Microsoft Intune
+Microsoft Defender SmartScreen is constantly learning
+Blocking URLs associated with potentially unwanted applications
+Microsoft Defender SmartScreen checks the reputation of any website, application, or web-based app the first time it’s run. Microsoft Defender SmartScreen will check the digital signatures and some other factors against a Microsoft-maintained service. If an app or website has no reputation or is known to be malicious, Microsoft Defender SmartScreen will warn the user or block the app from running entirely.</p>
+
+<p>So, Microsoft Defender SmartScreen is a security layer that needs to be implemented in my opinion to protect your users against the dark part of the internet.</p>
+
+<p>What configuration setting are available?
+Administrative Templates – Internet Explorer *
+Note.</p>
+
+<p>Internet Explorer (IE) 11 desktop application ended support for certain operating systems on June 15, 2022. Customers are encouraged to move to Microsoft Edge with IE mode.</p>
+
+<p>Prevent bypassing SmartScreen Filter warnings</p>
+
+<p>This policy setting determines whether the user can bypass warnings from SmartScreen Filter. SmartScreen Filter prevents the user from browsing to or downloading from sites that are known to host malicious content. SmartScreen Filter also prevents the execution of files that are known to be malicious. If you enable this policy setting, SmartScreen Filter warnings block the user. If you disable or do not configure this policy setting, the user can bypass SmartScreen Filter warnings.</p>
+
+<p>Prevent bypassing SmartScreen Filter warnings about files that are not commonly downloaded from the Internet</p>
+
+<p>This policy setting determines whether the user can bypass warnings from SmartScreen Filter. SmartScreen Filter warns the user about executable files that Internet Explorer users do not commonly download from the Internet. If you enable this policy setting, SmartScreen Filter warnings block the user. If you disable or do not configure this policy setting, the user can bypass SmartScreen Filter warnings.</p>
+
+<p>Prevent managing SmartScreen Filter</p>
+
+<p>This policy setting prevents the user from managing SmartScreen Filter, which warns the user if the website being visited is known for fraudulent attempts to gather personal information through “phishing,” or is known to host malware. If you enable this policy setting, the user is not prompted to turn on SmartScreen Filter. All website addresses that are not on the filter’s allow list are sent automatically to Microsoft without prompting the user. If you disable or do not configure this policy setting, the user is prompted to decide whether to turn on SmartScreen Filter during the first-run experience.</p>
+
+<p>Administrative Templates – File Explorer
+Configure Windows Defender SmartScreen</p>
+
+<p>This policy allows you to turn Windows Defender SmartScreen on or off. SmartScreen helps protect PCs by warning users before running potentially malicious programs downloaded from the Internet. This warning is presented as an interstitial dialog shown before running an app that has been downloaded from the Internet and is unrecognized or known to be malicious. No dialog is shown for apps that do not appear to be suspicious. Some information is sent to Microsoft about files and programs run on PCs with this feature enabled.</p>
+
+<p>Browser *
+Note.</p>
+
+<p>These settings are for the previous version of Microsoft Edge (version 45 and earlier) and are deprecated. These settings will be removed in a future Windows release. Microsoft recommends updating your version of Microsoft Edge to version 77 or later and use the ADMX Ingestion function for management. Learn more about how to Configure Microsoft Edge using Mobile Device Management.</p>
+
+<p>Allow Smart Screen</p>
+
+<p>This setting lets you decide whether to turn on Windows Defender SmartScreen.</p>
+
+<p>Prevent Smart Screen Prompt Override</p>
+
+<p>This setting lets you decide whether to turn on Windows Defender SmartScreen.</p>
+
+<p>Prevent Smart Screen Prompt Override For Files</p>
+
+<p>Don’t allow Windows Defender SmartScreen warning overrides for unverified files.</p>
+
+<p>Microsoft Edge
+Configure Microsoft Defender SmartScreen</p>
+
+<p>This policy setting lets you configure whether to turn on Microsoft Defender SmartScreen. Microsoft Defender SmartScreen provides warning messages to help protect your users from potential phishing scams and malicious software. By default, Microsoft Defender SmartScreen is turned on. If you enable this setting, Microsoft Defender SmartScreen is turned on. If you disable this setting, Microsoft Defender SmartScreen is turned off. If you don’t configure this setting, users can choose whether to use Microsoft Defender SmartScreen. This policy is available only on Windows instances that are joined to a Microsoft Active Directory domain; or on Windows 10 Pro or Enterprise instances that are enrolled for device management.</p>
+
+<p>Configure Microsoft Defender SmartScreen to block potentially unwanted apps</p>
+
+<p>This policy setting lets you configure whether to turn on blocking for potentially unwanted apps with Microsoft Defender SmartScreen. Potentially unwanted app blocking with Microsoft Defender SmartScreen provides warning messages to help protect users from adware, coin miners, bundleware, and other low-reputation apps that are hosted by websites. Potentially unwanted app blocking with Microsoft Defender SmartScreen is turned off by default. If you enable this setting, potentially unwanted app blocking with Microsoft Defender SmartScreen is turned on. If you disable this setting, potentially unwanted app blocking with Microsoft Defender SmartScreen is turned off. If you don’t configure this setting, users can choose whether to use potentially unwanted app blocking with Microsoft Defender SmartScreen. This policy is available only on Windows instances that are joined to a Microsoft Active Directory domain; or on Windows 10 Pro or Enterprise instances that are enrolled for device management.</p>
+
+<p>Enable Microsoft Defender SmartScreen DNS requests</p>
+
+<p>This policy lets you configure whether to enable DNS requests made by Microsoft Defender SmartScreen. Note: Disabling DNS requests will prevent Microsoft Defender SmartScreen from getting IP addresses, and potentially impact the IP-based protections provided. If you enable or don’t configure this setting, Microsoft Defender SmartScreen will make DNS requests. If you disable this setting, Microsoft Defender SmartScreen will not make any DNS requests. This policy is available only on Windows instances that are joined to a Microsoft Active Directory domain, Windows 10 Pro or Enterprise instances that enrolled for device management, or macOS instances that are that are managed via MDM or joined to a domain via MCX.</p>
+
+<p>Enable new SmartScreen library</p>
+
+<p>Allows the Microsoft Edge browser to load new SmartScreen library (libSmartScreenN) for any SmartScreen checks on site URLs or application downloads. If you enable this policy, Microsoft Edge will use SmartScreen implementation from new library (libSmartScreenN). If you disable or don’t configure this policy, Microsoft Edge will continue using the SmartScreen implementation from old library (libSmartScreen). This policy is available only on Windows instances that are joined to a Microsoft Active Directory domain, Windows 10 Pro or Enterprise instances that enrolled for device management, or macOS instances that are that are managed via MDM or joined to a domain via MCX. This temporary policy was created to support the update of a new SmartScreen client. This policy will be deprecated and removed along with the legacy client.</p>
+
+<p>Force Microsoft Defender SmartScreen checks on downloads from trusted sources</p>
+
+<p>This policy setting lets you configure whether Microsoft Defender SmartScreen checks download reputation from a trusted source. If you enable or don’t configure this setting, Microsoft Defender SmartScreen checks the download’s reputation regardless of source. If you disable this setting, Microsoft Defender SmartScreen doesn’t check the download’s reputation when downloading from a trusted source. This policy is available only on Windows instances that are joined to a Microsoft Active Directory domain; or on Windows 10 Pro or Enterprise instances that are enrolled for device management.</p>
+
+<p>Prevent bypassing Microsoft Defender SmartScreen prompts for sites</p>
+
+<p>This policy setting lets you decide whether users can override the Microsoft Defender SmartScreen warnings about potentially malicious websites. If you enable this setting, users can’t ignore Microsoft Defender SmartScreen warnings and they are blocked from continuing to the site. If you disable or don’t configure this setting, users can ignore Microsoft Defender SmartScreen warnings and continue to the site. This policy is available only on Windows instances that are joined to a Microsoft Active Directory domain; or on Windows 10 Pro or Enterprise instances that are enrolled for device management.</p>
+
+<p>Prevent bypassing of Microsoft Defender SmartScreen warnings about downloads</p>
+
+<p>This policy lets you determine whether users can override Microsoft Defender SmartScreen warnings about unverified downloads. If you enable this policy, users in your organization can’t ignore Microsoft Defender SmartScreen warnings, and they’re prevented from completing the unverified downloads. If you disable or don’t configure this policy, users can ignore Microsoft Defender SmartScreen warnings and complete unverified downloads. This policy is available only on Windows instances that are joined to a Microsoft Active Directory domain; or on Windows 10 Pro or Enterprise instances that are enrolled for device management.</p>
+
+<p>Smart Screen
+Enable App Install Control</p>
+
+<p>This policy setting is intended to prevent malicious content from affecting your user’s devices when downloading executable content from the internet.</p>
+
+<p>Enable Smart Screen In Shell</p>
+
+<p>Allows IT Admins to configure SmartScreen for Windows.</p>
+
+<p>Prevent Override For Files In Shell</p>
+
+<p>Allows IT Admins to control whether users can ignore SmartScreen warnings and run malicious file.</p>
+
+<p>Smart Screen – Enhanced Phishing Protection
+One of the features of Windows 11 and SmartScreen is Enhanced Phishing protection. Those settings need to be configured as well. Check out this blog post that goes about the technical part of protecting your users against phishing with SmartScreen.</p>
+
+<p>Which configuration setting should I configure?
+Which setting should I configure? This is an excellent question. My only answer to this question is, that it depends on what applies to your organization. Are you still using Internet Explorer? Configure SmartScreen for Internet Explorer as well.</p>
+
+<p>Remember that you can allow specific websites and files in the M365 Defender portal via indicators. With that in mind, configure the SmartScreen as securely as possible and allow files, IP addresses, URLs/Domains, and certificates if needed.</p>
+
+<p>Note.</p>
+
+<p>The below settings are based on an environment with Windows 11 with the latest update and no Internet explorer or legacy browser</p>
+
+<p>Administrative Templates – File Explorer
+Setting	Value
+Configure Windows Defender SmartScreen	Enabled – Warn and prevent bypass
+Microsoft Edge
+Setting	Value
+Configure Microsoft Defender SmartScreen	Enabled
+Configure Microsoft Defender SmartScreen to block potentially unwanted apps	Enabled
+Enable Microsoft Defender SmartScreen DNS requests	Enabled
+Enable new SmartScreen library	Enabled
+Force Microsoft Defender SmartScreen checks on downloads from trusted sources	Enabled
+Prevent bypassing Microsoft Defender SmartScreen prompts for sites	Enabled
+Prevent bypassing of Microsoft Defender SmartScreen warnings about downloads	Enabled
+Smart Screen
+Setting	Value
+Enable App Install Control	Enable
+Enable Smart Screen In Shell	Enabled
+Prevent Override For Files In Shell	Enabled
+Smart Screen – Enhanced Phishing Protection
+One of the features of Windows 11 and SmartScreen is Enhanced Phishing protection. Those settings need to be configured as well. Check out this blog post that goes about the technical part of protecting your users against phishing with SmartScreen.</p>
+
+<p>How to configure SmartScreen via Settings catalog
+Open Microsoft Intune
+In the menu select Devices
+Under Devices, select Windows and select configuration profiles
+Or use the following link  Create a profile – Microsoft Intune admin center
+Click on + Create Profile</p>
+
+<p>Select Windows 10 and later as the platform.
+Select Settings catalog as the profile type.</p>
+
+<p>Click on Create
+Provide a policy name, e.g., EndpointCave-PRD-Win-SmartScreen.
+Set a description, so that everyone with access to the portal knows the purpose.
+Click on Next
+Click on + Add settings, and search for the SmartScreen settings (see above tables).
+Check all the checkboxes for settings that you want to configure.</p>
+
+<p>Close the Settings Picker
+Enable and configure all the SmartScreen settings.</p>
+
+<p>Click on the Next button at the bottom of the page.
+Set a Scope tag if needed and click on Next.
+Assign the SmartScreen policy to the correct group, configure a filter if needed, and click on Next.
+Review your configuration at the Review + create page and click on Create
+Test your Microsoft Defender SmartScreen configuration
+If you want to validate if SmartScreen is working correctly, you can use Defender testground via UrlRep – Microsoft Defender Testground and AppRep – Microsoft Defender Testground. Select one of the scenarios and test your configuration.</p>
+
+<p>Results</p>
+
+
+        
+      </section>
+
+      <section class="page__share">
+
+  <div class="share-box">
+    <h5 class="share-link-description">Share this entry</h5>
+    <ul class="share-box-list">
+      <li class="share-link social-link-facebook">
+        <a target="_blank" href="https://www.facebook.com/sharer.php?u=http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/&amp;t=Configure+Defender+SmartScreen+via+Settings+catalog+with+Intune">
+          <i class="fab fa-brands fa-facebook"></i>
+        </a>
+      </li>
+      <li class="share-link social-link-x">
+        <a target="_blank" href="https://twitter.com/share?text=Configure+Defender+SmartScreen+via+Settings+catalog+with+Intune&amp;url=http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/">
+          <i class="fab fa-brands fa-x-twitter"></i>
+        </a>
+      </li>
+      <li class="share-link social-link-whatsapp">
+        <a target="_blank" href="https://api.whatsapp.com/send?text=http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/">
+          <i class="fab fa-brands fa-whatsapp"></i>
+        </a>
+      </li>
+      <li class="share-link social-link-linkedin">
+        <a target="_blank" href="https://linkedin.com/shareArticle?mini=true&amp;title=Configure+Defender+SmartScreen+via+Settings+catalog+with+Intune&amp;url=http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/">
+          <i class="fab fa-brands fa-linkedin"></i>
+          </a>
+      </li>
+      <li class="share-link social-link-mail">
+        <a href="mailto:?subject=Configure+Defender+SmartScreen+via+Settings+catalog+with+Intune&amp;body=http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">Bekijk ook eens</h2>
+  <div class="grid__wrapper">
+    
+      
+  </div>
+</div>
+
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Geef uw zoekterm in...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Geef uw zoekterm in..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div id="footer-layout">
+  <div class="container">
+    <div class="one_third">
+        <h3 class="title">About Me</h3>
+          <p>
+            <p>René Laas</p>
+
+          </p>
+          <p>
+            
+              <p>Tribe Leader Security @ RawWorks. A Microsoft MVP with a deep passion for security and Microsoft.</p>
+
+          
+            <a href="/about/" class="underline">
+              Read more about me
+            </a>
+          </p>
+    </div>
+    <div class="one_third" id="newsbox-3">
+        <h3 class="title">Latest blog posts</h3>
+        <ul class="news-wrap"><li class="news-content">
+            <div class="news-link">
+              <a href="/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/">
+                <img width="36" height="36" src="/assets/branding/rene01.jpg" sizes="(max-width: 36px) 100vw, 36px">
+              </a>
+              <div class="news-headline">
+                <a href="/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/">
+                  Configure Defender SmartScreen via Settings catalog with Intune
+                </a>
+                <span class="news-time">21/09/2023 - 20:40</span>
+              </div>
+            </div>
+          </li></ul>
+    </div>
+    <div class="one_third last">
+      <section id="Newsletter">
+        <h3 class="title">Subscribe to my monthly security newsletter</h3>
+        <iframe src="https://endpointcave.substack.com/embed" id="newsletter" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+</div>
+      </footer>
+    </div>
+    <footer class="page__footer-copyright" id="copy" role="contentinfo" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
+    <div class="container">
+      <span class="copyright">
+        &copy; 2025 Copyright -
+        <a href="http://localhost:4000">
+          Endpointcave
+        </a>
+      </span>
+      <ul class="social_bookmarks">
+    <li>
+      <a target="_blank" href="https://www.linkedin.com/in/renelaas/">
+        <i class="fab fa-brands fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="https://x.com/mr_helaas">
+        <i class="fab fa-brands fa-square-x-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="https://github.com/Renelaas">
+        <i class="fab fa-fw fa-github"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="/contact">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/feed.xml">
+        <i class="fas fa-fw fa-rss-square"></i>
+      </a>
+    </li>
+    
+  </ul>
+      <nav class="sub_menu_socket" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+        <div class="avia3-menu">
+          <ul role="menu" class="menu" id="avia3-menu"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://endpointcave.substack.com/"
+                
+                
+              >Montly security newsletter</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/contact/"
+                
+                
+              >Contact</a>
+            </li></ul>
+        </div>
+      </nav>
+    </div>
+</footer>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
