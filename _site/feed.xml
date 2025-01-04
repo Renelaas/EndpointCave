@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/endpointcave/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/endpointcave/" rel="alternate" type="text/html" /><updated>2025-01-04T18:02:47+01:00</updated><id>http://localhost:4000/endpointcave/feed.xml</id><title type="html">Endpointcave</title><author><name>René Laas</name></author><entry><title type="html">Configure Defender SmartScreen via Settings catalog with Intune</title><link href="http://localhost:4000/endpointcave/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/" rel="alternate" type="text/html" title="Configure Defender SmartScreen via Settings catalog with Intune" /><published>2025-01-03T19:40:03+01:00</published><updated>2025-01-03T19:40:03+01:00</updated><id>http://localhost:4000/endpointcave/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md</id><content type="html" xml:base="http://localhost:4000/endpointcave/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/"><![CDATA[<p><em>The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen for Windows via the Settings Catalog option with Microsoft Intune.</em></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/endpointcave/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/endpointcave/" rel="alternate" type="text/html" /><updated>2025-01-04T19:08:13+01:00</updated><id>http://localhost:4000/endpointcave/feed.xml</id><title type="html">Endpointcave</title><author><name>René Laas</name></author><entry><title type="html">Configure Defender SmartScreen via Settings catalog with Intune</title><link href="http://localhost:4000/endpointcave/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/" rel="alternate" type="text/html" title="Configure Defender SmartScreen via Settings catalog with Intune" /><published>2025-01-03T19:40:03+01:00</published><updated>2025-01-03T19:40:03+01:00</updated><id>http://localhost:4000/endpointcave/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md</id><content type="html" xml:base="http://localhost:4000/endpointcave/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/"><![CDATA[<p><em>The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen for Windows via the Settings Catalog option with Microsoft Intune.</em></p>
 
 <p>In this blog post, I will use the Settings Catalog option. It is possible to configure SmartScreen via several methods. In the past, we also had the options to configure it via Endpoint Protection and Administrative Templates, but those configuration profiles will be or are phased out.</p>
 
@@ -38,7 +38,88 @@
 
 <h4 id="what-configuration-setting-are-available">What configuration setting are available?</h4>
 
-<h6 id="smart-screen">Smart Screen</h6>
+<p><strong>Administrative Templates - Windows Components &gt; File Explorer</strong></p>
+
+<p>Configure Windows Defender SmartScreen</p>
+<blockquote>
+  <p>This policy allows you to turn Windows Defender SmartScreen on or off. SmartScreen helps protect PCs by warning users before running potentially malicious programs downloaded from the Internet. This warning is presented as an interstitial dialog shown before running an app that has been downloaded from the Internet and is unrecognized or known to be malicious. No dialog is shown for apps that do not appear to be suspicious. Some information is sent to Microsoft about files and programs run on PCs with this feature enabled.</p>
+</blockquote>
+
+<p><strong>Microsoft Edge - SmartScreen Settings</strong></p>
+
+<p>Configure Microsoft Defender SmartScreen</p>
+<blockquote>
+  <p>This policy setting lets you configure whether to turn on Microsoft Defender SmartScreen. Microsoft Defender SmartScreen provides warning messages to help protect your users from potential phishing scams and malicious software. By default, Microsoft Defender SmartScreen is turned on.</p>
+</blockquote>
+
+<p>Configure Microsoft Defender SmartScreen to block potentially unwanted apps</p>
+<blockquote>
+  <p>This policy setting lets you configure whether to turn on blocking for potentially unwanted apps with Microsoft Defender SmartScreen. Potentially unwanted app blocking with Microsoft Defender SmartScreen provides warning messages to help protect users from adware, coin miners, bundleware, and other low-reputation apps that are hosted by websites. Potentially unwanted app blocking with Microsoft Defender SmartScreen is turned off by default.</p>
+</blockquote>
+
+<p>Enable Microsoft Defender SmartScreen DNS requests</p>
+<blockquote>
+  <p>This policy lets you configure whether to enable DNS requests made by Microsoft Defender SmartScreen. Note: Disabling DNS requests will prevent Microsoft Defender SmartScreen from getting IP addresses, and potentially impact the IP-based protections provided.</p>
+</blockquote>
+
+<p>Enable new SmartScreen library</p>
+<blockquote>
+  <p>Allows the Microsoft Edge browser to load new SmartScreen library (libSmartScreenN) for any SmartScreen checks on site URLs or application downloads.</p>
+</blockquote>
+
+<p>Force Microsoft Defender SmartScreen checks on downloads from trusted sources</p>
+<blockquote>
+  <p>This policy setting lets you configure whether Microsoft Defender SmartScreen checks download reputation from a trusted source.</p>
+</blockquote>
+
+<p>Prevent bypassing Microsoft Defender SmartScreen prompts for sites</p>
+<blockquote>
+  <p>This policy setting lets you decide whether users can override the Microsoft Defender SmartScreen warnings about potentially malicious websites.</p>
+</blockquote>
+
+<p>Prevent bypassing of Microsoft Defender SmartScreen warnings about downloads</p>
+<blockquote>
+  <p>This policy lets you determine whether users can override Microsoft Defender SmartScreen warnings about unverified downloads.</p>
+</blockquote>
+
+<p><strong>Smart Screen</strong></p>
+
+<p>Enable App Install Control</p>
+<blockquote>
+  <p>This policy setting is intended to prevent malicious content from affecting your user’s devices when downloading executable content from the internet.</p>
+</blockquote>
+
+<p>Enable Smart Screen In Shell</p>
+<blockquote>
+  <p>Allows IT Admins to configure SmartScreen for Windows.</p>
+</blockquote>
+
+<p>Prevent Override For Files In Shell</p>
+<blockquote>
+  <p>Allows IT Admins to control whether users can ignore SmartScreen warnings and run malicious files.</p>
+</blockquote>
+
+<p><strong>Smart Screen - Enhanced Phishing Protection</strong></p>
+
+<p>Notify Malicious</p>
+<blockquote>
+  <p>Configures Enhanced Phishing Protection notifications for malicious content.</p>
+</blockquote>
+
+<p>Notify Password Reuse</p>
+<blockquote>
+  <p>Configures Enhanced Phishing Protection notifications for protecting passwords from reuse.</p>
+</blockquote>
+
+<p>Notify Unsafe App</p>
+<blockquote>
+  <p>Configures Enhanced Phishing Protection notifications for protecting passwords typed into M365 Office applications, Notepad, and Wordpad.</p>
+</blockquote>
+
+<p>Service Enabled</p>
+<blockquote>
+  <p>Enables Enhanced Phishing Protection in audit mode for Windows 11 H2.</p>
+</blockquote>
 
 <h4 id="which-configuration-setting-do-i-need-to-configure">Which configuration setting do I need to configure?</h4>
 
@@ -48,46 +129,158 @@
 
 <p>With that in mind, configure SmartScreen as securely as possible and allow only files, IP addresses, URLs/Domains, and certificates if needed. So make a good decision and think carefully about how strict and secure you make your configuration because your users also need to be able to work with it.</p>
 
+<p><strong>Administrative Templates - Windows Components &gt; File Explorer</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Configure Windows Defender SmartScreen</td>
+      <td>Enabled – Warn and prevent bypass</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Microsoft Edge - SmartScreen Settings</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Configure Microsoft Defender SmartScreen</td>
+      <td>Enabled</td>
+    </tr>
+    <tr>
+      <td>Configure Microsoft Defender SmartScreen to block potentially unwanted apps</td>
+      <td>Enabled</td>
+    </tr>
+    <tr>
+      <td>Enable Microsoft Defender SmartScreen DNS requests</td>
+      <td>Enabled</td>
+    </tr>
+    <tr>
+      <td>Enable new SmartScreen library</td>
+      <td>Enabled</td>
+    </tr>
+    <tr>
+      <td>Force Microsoft Defender SmartScreen checks on downloads from trusted sources</td>
+      <td>Enabled</td>
+    </tr>
+    <tr>
+      <td>Prevent bypassing Microsoft Defender SmartScreen prompts for sites</td>
+      <td>Enabled</td>
+    </tr>
+    <tr>
+      <td>Prevent bypassing of Microsoft Defender SmartScreen warnings about downloads</td>
+      <td>Enabled</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Smart Screen</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Enable App Install Control</td>
+      <td>Enabled</td>
+    </tr>
+    <tr>
+      <td>Enable Smart Screen In Shell</td>
+      <td>Enabled</td>
+    </tr>
+    <tr>
+      <td>Prevent Override For Files In Shell</td>
+      <td>Enabled</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Smart Screen - Enhanced Phishing Protection</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Notify Malicious</td>
+      <td>Enabled</td>
+    </tr>
+    <tr>
+      <td>Notify Password Reuse</td>
+      <td>Enabled</td>
+    </tr>
+    <tr>
+      <td>Notify Unsafe App</td>
+      <td>Enabled</td>
+    </tr>
+    <tr>
+      <td>Service Enabled</td>
+      <td>Enabled</td>
+    </tr>
+  </tbody>
+</table>
+
 <h4 id="how-to-configure-smartscreen-via-settings-catalog">How to configure SmartScreen via Settings Catalog</h4>
 
 <ul>
-  <li>Open Microsoft Intune</li>
-  <li>In the menu select Devices</li>
-  <li>Under Devices, select Windows and select configuration profiles, or use the following link: <a href="https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/~/configuration" target="_blank">Create a profile – Microsoft Intune admin center</a></li>
-  <li>Click on + Create Profile</li>
+  <li>Open <strong>Microsoft Intune</strong></li>
+  <li>In the menu select <strong>Devices</strong></li>
+  <li>Under <strong>Devices</strong>, select <strong>Windows</strong> and select <strong>configuration profiles</strong>, or use the following link: <a href="https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/~/configuration" target="_blank">Create a profile – Microsoft Intune admin center</a></li>
+  <li>Click on <strong>+ Create Profile</strong></li>
 </ul>
 
 <p><img src="/endpointcave/assets/images/create-profile.png" alt="Intune, Create Profile " /></p>
 
 <ul>
-  <li>Select Windows 10 and later as the platform and Settings Catalog as the profile type.</li>
+  <li>Select <strong>Windows 10 and later</strong> as the platform and <strong>Settings Catalog</strong> as the profile type.</li>
 </ul>
 
 <p><img src="/endpointcave/assets/images/create-settings-catalog.png" alt="Intune, Create Settings catalog " /></p>
 
 <ul>
-  <li>Click on Create</li>
+  <li>Click on <strong>Create</strong></li>
   <li>Provide a policy name, e.g., EndpointCave-PRD-Win-SmartScreen.</li>
   <li>Set a description, so that everyone with access to the portal knows the purpose.</li>
-  <li>Click on Next</li>
-  <li>Click on + Add settings, and search for the required settings.</li>
+  <li>Click on <strong>Next</strong></li>
+  <li>Click on <strong>+ Add settings</strong>, and search for the required settings.</li>
   <li>Check all the checkboxes for settings that you want to configure.</li>
 </ul>
 
 <p><img src="/endpointcave/assets/images/settings-picker-smartscreen.png" alt="Intune, Settings picker SmartScreen " /></p>
 
 <ul>
-  <li>Close the Settings Picker</li>
-  <li>Enable and configure all the SmartScreen settings.</li>
+  <li><strong>Close</strong> the <strong>Settings Picker</strong></li>
+  <li><strong>Enable</strong> and <strong>configure</strong> all the needed <strong>SmartScreen</strong> settings.</li>
 </ul>
 
 <p><img src="/endpointcave/assets/images/smartscreen-settings.png" alt="Intune, Settings picker SmartScreen " /></p>
 
 <ul>
-  <li>Click on the Next button at the bottom of the page.</li>
-  <li>Set a Scope tag if needed and click on Next.</li>
-  <li>Assign the SmartScreen policy to the correct group, configure a filter if needed, and click on Next.</li>
-  <li>On the review page + create page, review your configuration and click on Create</li>
+  <li>Click on the <strong>Next</strong> button at the bottom of the page.</li>
+  <li>Set a Scope tag if needed and click on <strong>Next</strong>.</li>
+  <li>Assign the configuration policy to the correct group, set a filter if needed, and click on <strong>Next</strong>.</li>
+  <li>On the <strong>review page + create</strong> page, review your configuration and click on <strong>Create</strong></li>
 </ul>
 
 <h4 id="test-your-microsoft-defender-smartscreen-configuration">Test your Microsoft Defender SmartScreen configuration</h4>

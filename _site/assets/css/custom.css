@@ -477,7 +477,7 @@ h5{
     line-height: 1.1em;
 }
 h6{
-    font-size: 18px !important;
+    font-size: 16px !important;
     color: #719430;
     text-transform: none;
     font-family: 'lato', Helvetica, Arial, sans-serif;
@@ -494,4 +494,9 @@ h6{
 .archive p
 {
     font-size: 16px !important;
+}
+table
+{
+    border: 1px solid #ebebeb;
+    display: table !important;
 }
