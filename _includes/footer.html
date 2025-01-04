@@ -9,7 +9,7 @@
             {% if author.bio %}
               {{ author.bio | markdownify }}
           {% endif %}
-            <a href="/about/" class="underline">
+            <a href="{{ '/about/' | relative_url }}" class="underline">
               Read more about me
             </a>
           </p>
