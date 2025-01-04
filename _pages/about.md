@@ -5,19 +5,19 @@ permalink: /about/
 author_profile: true
 ---
 
-Tribe Leader Security @ RawWorks  
-A Microsoft MVP with a deep passion for cybersecurity and Microsoft.
 
-I started this blog about Microsoft 365 to help you with configuring “The Modern Workplace”. When I started with configuring “The Modern Workplace”, It was hard to find good content. So it was a lot of troubleshooting to master the technology.
 
-I get energy from helping people, so that’s why I decided to start my own blog. I know how hard it was to start, so I hope that my blogs will help you or your organization with “The Modern Way of Working”.
+My name is Rene Laas and I work now as a Tribe Leader Security at RawWorks in the Netherlands. 
 
-I am based in the Netherlands, and at the moment I am a Modern Workplace Consultant with almost 10 years experience in IT, and about 5 years the focus is on the Microsoft Cloud and in particular Microsoft 365 (Intune, Office365, etc.)
+A Microsoft MVP with a deep passion for cybersecurity and Microsoft. With over 10 years of experience in IT, with a focus on security combined with Microsoft technology, I have worked for a lot of clients across industries and from small businesses to enterprise environments.
 
-I’ve done multiple Modern Workplace implementations for clients across industries and from small businesses to enterprise environments.
+A few years ago, I started my own blog about configuring the modern workplace with Microsoft Intune and security related topics. During my journey to learn Intune and security, I found it difficult to find good content, so I decided to write my own. I get a lot of energy from helping people, which is also one of the reasons why I started my blog.
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="/assets/branding/playground-smartscreen.png" alt="Image 1" style="width: 30%;" />
-  <img src="/assets/branding/playground-smartscreen.png" alt="Image 2" style="width: 30%;" />
-  <img src="/assets/branding/playground-smartscreen.png" alt="Image 3" style="width: 30%;" />
+The community is very important to me. I regularly attend various community events, where I gain a lot of knowledge and make valuable connections. In 2024 I founded my own community, completely focused on data security, together with relations from the community.
+  
+
+<div>
+  <img src="/assets/branding/MVP_Badge_Avatar_Preferred_Blue3005_RGB.png" alt="Image 1" style="width: 30%;" />
+  <img src="/assets/branding/microsoft365-enterprise-adminstrator-expert-600x600.png" alt="Image 2" style="width: 30%;" />
+  <img src="/assets/branding/microsoft365-modern-desktop-administrator-associate-600x600.png" alt="Image 3" style="width: 30%;" />
 </div>
