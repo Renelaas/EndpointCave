@@ -4,7 +4,7 @@ title:  "Configure Defender SmartScreen via Settings catalog with Intune"
 date:   2025-01-03 20:40:03 +0200
 categories: Microsoft-Defender-For-XDR SmartScreen
 tags: Intune SmartScreen Microsoft-Defender-For-XDR Settings-Catalog
-image: /assets/branding/Rene01.jpg
+image: /assets/branding/stop.jpg
 ---
 
 *The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen for Windows via the Settings Catalog option with Microsoft Intune.*
