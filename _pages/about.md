@@ -17,7 +17,7 @@ The community is very important to me. I regularly attend various community even
   
 
 <div>
-  <img src="/assets/branding/MVP_Badge_Avatar_Preferred_Blue3005_RGB.png" alt="Image 1" style="width: 30%;" />
-  <img src="/assets/branding/microsoft365-enterprise-adminstrator-expert-600x600.png" alt="Image 2" style="width: 30%;" />
-  <img src="/assets/branding/microsoft365-modern-desktop-administrator-associate-600x600.png" alt="Image 3" style="width: 30%;" />
+  <img src="/endpointcave/assets/branding/MVP_Badge_Avatar_Preferred_Blue3005_RGB.png" alt="Image 1" style="width: 30%;" />
+  <img src="/endpointcave/assets/branding/microsoft365-enterprise-adminstrator-expert-600x600.png" alt="Image 2" style="width: 30%;" />
+  <img src="/endpointcave/assets/branding/microsoft365-modern-desktop-administrator-associate-600x600.png" alt="Image 3" style="width: 30%;" />
 </div>
