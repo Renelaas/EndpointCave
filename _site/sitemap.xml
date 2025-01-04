@@ -2,16 +2,13 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/</loc>
-<lastmod>2023-09-21T20:40:03+02:00</lastmod>
+<lastmod>2025-01-03T19:40:03+01:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/categories/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/contact/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/</loc>

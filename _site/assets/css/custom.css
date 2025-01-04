@@ -435,3 +435,57 @@ iframe .embed-page
     color: #fff;
     background-color: #9fae37;
 }
+
+.page__content{
+    font-size: 16px !important;
+}
+.page__title a{
+    font-size: 34px;
+    color: #719430 !important;
+    text-transform: none;
+    font-family: 'lato', Helvetica, Arial, sans-serif;
+    line-height: 1.1em;
+}
+
+H1{
+    color: #719430 !important;
+    text-transform: none;
+    font-family: 'lato', Helvetica, Arial, sans-serif;
+    font-size: 34px;
+    line-height: 1.1em;
+}
+H2{
+    color: #719430 !important;
+    text-transform: none;
+    font-family: 'lato', Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    line-height: 1.1em;
+}
+H3{
+    color: #719430 !important;
+    text-transform: none;
+    font-family: 'lato', Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.1em;
+}
+h4{
+    color: #719430 !important;
+    text-transform: none;
+    font-family: 'lato', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.1em;
+}
+h5{
+    color: #719430 !important;
+    text-transform: none;
+    font-family: 'lato', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.1em;
+}
+h6{
+    color: #719430 !important;
+    text-transform: none;
+    font-family: 'lato', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.1em;
+}
