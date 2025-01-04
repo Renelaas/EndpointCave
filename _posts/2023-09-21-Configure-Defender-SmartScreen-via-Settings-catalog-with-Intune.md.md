@@ -4,7 +4,7 @@ title:  "Configure Defender SmartScreen via Settings catalog with Intune"
 date:   2025-01-03 20:40:03 +0200
 categories: Microsoft-Defender-For-XDR SmartScreen
 tags: Intune SmartScreen Microsoft-Defender-For-XDR Settings-Catalog
-image: /assets/branding/stop.jpg
+image: /endpointcave/assets/images/stop.jpg
 ---
 
 *The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen for Windows via the Settings Catalog option with Microsoft Intune.*
@@ -59,28 +59,28 @@ With that in mind, configure SmartScreen as securely as possible and allow only 
 
 * Open Microsoft Intune
 * In the menu select Devices
-* Under Devices, select Windows and select configuration profiles, or use the following link  Create a profile – Microsoft Intune admin center
+* Under Devices, select Windows and select configuration profiles, or use the following link: [Create a profile – Microsoft Intune admin center](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/~/configuration){:target="_blank"}
 * Click on + Create Profile
 
-![Intune, Create Profile ](/assets/images/create-profile.png)
+![Intune, Create Profile ](/endpointcave/assets/images/create-profile.png)
 
 * Select Windows 10 and later as the platform and Settings Catalog as the profile type.
 
-![Intune, Create Settings catalog ](/assets/images/create-settings-catalog.png)
+![Intune, Create Settings catalog ](/endpointcave/assets/images/create-settings-catalog.png)
 
 * Click on Create
 * Provide a policy name, e.g., EndpointCave-PRD-Win-SmartScreen.
 * Set a description, so that everyone with access to the portal knows the purpose.
 * Click on Next
-* Click on + Add settings, and search for the SmartScreen settings (see above tables).
+* Click on + Add settings, and search for the required settings.
 * Check all the checkboxes for settings that you want to configure.
 
-![Intune, Settings picker SmartScreen ](/assets/images/settings-picker-smartscreen.png)
+![Intune, Settings picker SmartScreen ](/endpointcave/assets/images/settings-picker-smartscreen.png)
 
 * Close the Settings Picker
 * Enable and configure all the SmartScreen settings.
 
-![Intune, Settings picker SmartScreen ](/assets/images/smartscreen-settings.png)
+![Intune, Settings picker SmartScreen ](/endpointcave/assets/images/smartscreen-settings.png)
 
 * Click on the Next button at the bottom of the page.
 * Set a Scope tag if needed and click on Next.
@@ -89,11 +89,16 @@ With that in mind, configure SmartScreen as securely as possible and allow only 
 
 #### Test your Microsoft Defender SmartScreen configuration
 
-If you want to validate if your SmartScreen configuration is working correctly, you can use Defender testground via UrlRep – Microsoft Defender Testground and AppRep – Microsoft Defender Testground. Select one of the scenarios and test your configuration.
+If you want to validate if your SmartScreen configuration is working correctly, you can use Defender testground via UrlRep – Microsoft Defender Testground and AppRep – Microsoft Defender Testground. 
 
-![Testground, check SmartScreen ](/assets/images/playground-smartscreen.png)
+![Testground, check SmartScreen ](/endpointcave/assets/images/playground-smartscreen.png)
+
+You can use a scenario via testground via the following url: 
+
+* [Microsoft Defender SmartScreen App Reputation Demos](https://demo.wd.microsoft.com/Page/AppRep){:target="_blank"}
+* [Microsoft Defender SmartScreen URL Reputation Demos](https://demo.wd.microsoft.com/Page/UrlRep){:target="_blank"}
 
 #### Results
 
-![Testground, Results ](/assets/images/playground-smartscreen.png)
+![Testground, Results ](/endpointcave/assets/images/Site-blocked.png)
 

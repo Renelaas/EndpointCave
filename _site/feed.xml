@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-01-04T16:06:17+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Endpointcave</title><author><name>René Laas</name></author><entry><title type="html">Configure Defender SmartScreen via Settings catalog with Intune</title><link href="http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/" rel="alternate" type="text/html" title="Configure Defender SmartScreen via Settings catalog with Intune" /><published>2025-01-03T19:40:03+01:00</published><updated>2025-01-03T19:40:03+01:00</updated><id>http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md</id><content type="html" xml:base="http://localhost:4000/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/"><![CDATA[<p><em>The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen for Windows via the Settings Catalog option with Microsoft Intune.</em></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/endpointcave/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/endpointcave/" rel="alternate" type="text/html" /><updated>2025-01-04T17:56:06+01:00</updated><id>http://localhost:4000/endpointcave/feed.xml</id><title type="html">Endpointcave</title><author><name>René Laas</name></author><entry><title type="html">Configure Defender SmartScreen via Settings catalog with Intune</title><link href="http://localhost:4000/endpointcave/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/" rel="alternate" type="text/html" title="Configure Defender SmartScreen via Settings catalog with Intune" /><published>2025-01-03T19:40:03+01:00</published><updated>2025-01-03T19:40:03+01:00</updated><id>http://localhost:4000/endpointcave/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md</id><content type="html" xml:base="http://localhost:4000/endpointcave/microsoft-defender-for-xdr/smartscreen/Configure-Defender-SmartScreen-via-Settings-catalog-with-Intune.md/"><![CDATA[<p><em>The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen for Windows via the Settings Catalog option with Microsoft Intune.</em></p>
 
 <p>In this blog post, I will use the Settings Catalog option. It is possible to configure SmartScreen via several methods. In the past, we also had the options to configure it via Endpoint Protection and Administrative Templates, but those configuration profiles will be or are phased out.</p>
 
@@ -53,35 +53,35 @@
 <ul>
   <li>Open Microsoft Intune</li>
   <li>In the menu select Devices</li>
-  <li>Under Devices, select Windows and select configuration profiles, or use the following link  Create a profile – Microsoft Intune admin center</li>
+  <li>Under Devices, select Windows and select configuration profiles, or use the following link: <a href="https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/~/configuration" target="_blank">Create a profile – Microsoft Intune admin center</a></li>
   <li>Click on + Create Profile</li>
 </ul>
 
-<p><img src="/assets/images/create-profile.png" alt="Intune, Create Profile " /></p>
+<p><img src="/endpointcave/assets/images/create-profile.png" alt="Intune, Create Profile " /></p>
 
 <ul>
   <li>Select Windows 10 and later as the platform and Settings Catalog as the profile type.</li>
 </ul>
 
-<p><img src="/assets/images/create-settings-catalog.png" alt="Intune, Create Settings catalog " /></p>
+<p><img src="/endpointcave/assets/images/create-settings-catalog.png" alt="Intune, Create Settings catalog " /></p>
 
 <ul>
   <li>Click on Create</li>
   <li>Provide a policy name, e.g., EndpointCave-PRD-Win-SmartScreen.</li>
   <li>Set a description, so that everyone with access to the portal knows the purpose.</li>
   <li>Click on Next</li>
-  <li>Click on + Add settings, and search for the SmartScreen settings (see above tables).</li>
+  <li>Click on + Add settings, and search for the required settings.</li>
   <li>Check all the checkboxes for settings that you want to configure.</li>
 </ul>
 
-<p><img src="/assets/images/settings-picker-smartscreen.png" alt="Intune, Settings picker SmartScreen " /></p>
+<p><img src="/endpointcave/assets/images/settings-picker-smartscreen.png" alt="Intune, Settings picker SmartScreen " /></p>
 
 <ul>
   <li>Close the Settings Picker</li>
   <li>Enable and configure all the SmartScreen settings.</li>
 </ul>
 
-<p><img src="/assets/images/smartscreen-settings.png" alt="Intune, Settings picker SmartScreen " /></p>
+<p><img src="/endpointcave/assets/images/smartscreen-settings.png" alt="Intune, Settings picker SmartScreen " /></p>
 
 <ul>
   <li>Click on the Next button at the bottom of the page.</li>
@@ -92,10 +92,17 @@
 
 <h4 id="test-your-microsoft-defender-smartscreen-configuration">Test your Microsoft Defender SmartScreen configuration</h4>
 
-<p>If you want to validate if your SmartScreen configuration is working correctly, you can use Defender testground via UrlRep – Microsoft Defender Testground and AppRep – Microsoft Defender Testground. Select one of the scenarios and test your configuration.</p>
+<p>If you want to validate if your SmartScreen configuration is working correctly, you can use Defender testground via UrlRep – Microsoft Defender Testground and AppRep – Microsoft Defender Testground.</p>
 
-<p><img src="/assets/images/playground-smartscreen.png" alt="Testground, check SmartScreen " /></p>
+<p><img src="/endpointcave/assets/images/playground-smartscreen.png" alt="Testground, check SmartScreen " /></p>
+
+<p>You can use a scenario via testground via the following url:</p>
+
+<ul>
+  <li><a href="https://demo.wd.microsoft.com/Page/AppRep" target="_blank">Microsoft Defender SmartScreen App Reputation Demos</a></li>
+  <li><a href="https://demo.wd.microsoft.com/Page/UrlRep" target="_blank">Microsoft Defender SmartScreen URL Reputation Demos</a></li>
+</ul>
 
 <h4 id="results">Results</h4>
 
-<p><img src="/assets/images/playground-smartscreen.png" alt="Testground, Results " /></p>]]></content><author><name>René Laas</name></author><category term="Microsoft-Defender-For-XDR" /><category term="SmartScreen" /><category term="Intune" /><category term="SmartScreen" /><category term="Microsoft-Defender-For-XDR" /><category term="Settings-Catalog" /><summary type="html"><![CDATA[The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen for Windows via the Settings Catalog option with Microsoft Intune.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/branding/Rene01.jpg" /><media:content medium="image" url="http://localhost:4000/assets/branding/Rene01.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p><img src="/endpointcave/assets/images/Site-blocked.png" alt="Testground, Results " /></p>]]></content><author><name>René Laas</name></author><category term="Microsoft-Defender-For-XDR" /><category term="SmartScreen" /><category term="Intune" /><category term="SmartScreen" /><category term="Microsoft-Defender-For-XDR" /><category term="Settings-Catalog" /><summary type="html"><![CDATA[The purpose of this blog post is to inform you how to configure Microsoft Defender SmartScreen for Windows via the Settings Catalog option with Microsoft Intune.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/endpointcave/endpointcave/assets/images/stop.jpg" /><media:content medium="image" url="http://localhost:4000/endpointcave/endpointcave/assets/images/stop.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

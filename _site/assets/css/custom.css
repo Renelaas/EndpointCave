@@ -321,6 +321,7 @@ line-height: 15px;
 #newsbox-3 .news-headline {
     display: flex;
     flex-direction: column;
+    margin-left:5px !important;
 }
 
 #newsbox-3 .news-headline a {
@@ -435,56 +436,62 @@ iframe .embed-page
     color: #fff;
     background-color: #9fae37;
 }
-
-.page__content{
-    font-size: 16px !important;
-}
-.page__title a{
-    font-size: 34px;
-    color: #719430 !important;
-    text-transform: none;
-    font-family: 'lato', Helvetica, Arial, sans-serif;
-    line-height: 1.1em;
-}
-H1{
+h1{
+    font-size: 36px !important;
     color: #719430 !important;
     text-transform: none;
     font-family: 'lato', Helvetica, Arial, sans-serif;
     font-size: 34px;
     line-height: 1.1em;
 }
-H2{
-    color: #719430 !important;
+h2{
+    font-size: 30px !important;
+    color: #719430;
     text-transform: none;
     font-family: 'lato', Helvetica, Arial, sans-serif;
-    font-size: 28px;
+    font-size: 34px;
     line-height: 1.1em;
 }
-H3{
-    color: #719430 !important;
+h3{
+    font-size: 26px !important;
+    color: #719430;
     text-transform: none;
     font-family: 'lato', Helvetica, Arial, sans-serif;
-    font-size: 24px;
+    font-size: 34px;
     line-height: 1.1em;
 }
 h4{
-    color: #719430 !important;
+    font-size: 22px !important;
+    color: #719430;
     text-transform: none;
     font-family: 'lato', Helvetica, Arial, sans-serif;
-    font-size: 20px;
+    font-size: 34px;
     line-height: 1.1em;
 }
 h5{
-    color: #719430 !important;
+    font-size: 20px !important;
+    color: #719430;
     text-transform: none;
     font-family: 'lato', Helvetica, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 34px;
     line-height: 1.1em;
 }
 h6{
-    color: #719430 !important;
+    font-size: 18px !important;
+    color: #719430;
     text-transform: none;
     font-family: 'lato', Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 34px;
     line-height: 1.1em;
+}
+.page__title a {
+    color: #719430 !important;
+    text-decoration: none;
+}
+.page__content{
+    font-size: 16px !important;
+}
+.archive p
+{
+    font-size: 16px !important;
 }
